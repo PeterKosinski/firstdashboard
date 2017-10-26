@@ -15,8 +15,7 @@
 <body>
     
     <div id="chart1"></div>
-    <div id-"chart2"></div>
-    
+
     
     
     <script>
@@ -45,28 +44,7 @@
                 
             dc.renderAll();
                  }
-                 
-        function makeGraphs(error, salaryData) {
-            var ndx = crossfilter(salaryData);
-            
-            var gender_dim = ndx.dimension(dc.pluck('gender'));
-            
-            var count_by_gender = gender_dim.group();
-            
-            dc.barChart('#chart2')
-                .height(300)
-                .width(400)
-                .margins({top:10, right:250, bottom:30, left:50})
-                .dimension(gender_dim)
-                .group(count_by_gender)
-                .transitionDuration(500)
-                .x(d3.scale.ordinal())
-                .xUnits(dc.units.ordinal)
-                .yAxisLabel("Person")
-                .yAxis().ticks(4);
-                
-            dc.renderAll();
-                 }
+        
     </script>
 
 </body>
